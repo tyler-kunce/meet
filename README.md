@@ -30,6 +30,9 @@ As a user, I should be able to launch the app from the Home Screen of my phone, 
 **Scenario:** User can install the meet app as a shortcut to their device Home Screen.
 Given a user has a personal device, when the app is installed, then a shortcut can be added to the Home Screen.
 
+# Utilization of Serverless Functions
+By utilizing serverless functions, the Meet app is able to streamline user access and manage OAuth security in tandem with the Google Calendar API and the application itself. The use of serverless functions provides developers and users with advantages in cost-effectiveness, scalability, and management of the backend processes providing developers more time to focus on code.
+
 ##**Display Charts Visualizing Event Details**
 As a user, I should be able to view event details in a chart format, so that I can consume information more easily.
 
