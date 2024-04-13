@@ -31,21 +31,6 @@ const checkToken = async (accessToken) => {
   return result;
 };
 
-const removeQuery = () => {
-  let newurl;
-  if (window.history.pushState && window.location.pathname) {
-    newurl =
-      window.location.protocol +
-      '//' +
-      window.location.host +
-      window.location.pathname;
-    window.history.pushState('', '', newurl);
-  } else {
-    newurl = window.location.protocol + '//' + window.location.host;
-    window.history.pushState('', '', newurl);
-  }
-};
-
 export const getEvents = async () => {
   if (window.location.href.startsWith('http://localhost')) {
     return mockData;
@@ -86,6 +71,21 @@ export const getAccessToken = async () => {
     return code && getAccessToken(code);
   }
   return accessToken;
+};
+
+const removeQuery = () => {
+  let newurl;
+  if (window.history.pushState && window.location.pathname) {
+    newurl =
+      window.location.protocol +
+      '//' +
+      window.location.host +
+      window.location.pathname;
+    window.history.pushState('', '', newurl);
+  } else {
+    newurl = window.location.protocol + '//' + window.location.host;
+    window.history.pushState('', '', newurl);
+  }
 };
 
 const getToken = async (code) => {
