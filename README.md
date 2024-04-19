@@ -10,7 +10,7 @@ Given a user enters the city in which they are planning activities, when they st
 As a user, I should be able to select an option to display or hide details, so that I can only view those in which I’m interested.
 
 **Scenario:** An event element is collapsed by default.
-Given a user enters a city in the search, when the list of events display, then the element should be collapsed (hidden) by default.
+Given the app is open, when the list of events display, then the event details are be hidden by default.
 
 ## **Specify Number of Events**
 As a user, I should see a preview totaling the number of events, so that I know how many are going on in a given location.
