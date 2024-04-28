@@ -1,5 +1,5 @@
 // src/components/Event.js
-import { useState } from 'react';
+import { useState } from "react";
 
 const Event = ({ event }) => {
   const [showDetails, setShowDetails] = useState(false);
@@ -12,11 +12,9 @@ const Event = ({ event }) => {
       {showDetails ? <p className="details">{event.description}</p> : null}
       <button
         className="details-btn"
-        onClick={() => {
-          showDetails ? setShowDetails(false) : setShowDetails(true);
-        }}
+        onClick={() => setShowDetails(!showDetails)}
       >
-        {showDetails ? 'Hide Details' : 'Show Details'}
+        {showDetails ? "Hide Details" : "Show Details"}
       </button>
     </li>
   );
