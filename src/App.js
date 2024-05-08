@@ -20,7 +20,7 @@ function App() {
     if (navigator.onLine) {
       setWarningAlert('');
     } else {
-      setWarningAlert('You appear to be Offline. You are seeing cached events.')
+      setWarningAlert('You appear to be Offline. You are seeing cached events.');
     }
     fetchData();
   }, [currentCity, currentNOE]);
