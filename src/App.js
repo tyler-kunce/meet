@@ -14,7 +14,7 @@ function App() {
   const [currentCity, setCurrentCity] = useState('See all cities');
   const [infoAlert, setInfoAlert] = useState('');
   const [errorAlert, setErrorAlert] = useState('');
-  const [WarningAlert, setWarningAlert] = useState('');
+  const [warningAlert, setWarningAlert] = useState('');
 
   useEffect(() => {
     if (navigator.onLine) {
@@ -37,7 +37,10 @@ function App() {
 
   return (
     <div className="App">
-      <div className='alerts-container'>{infoAlert.length ? <InfoAlert text={infoAlert}/> : null}{errorAlert.length ? <ErrorAlert text={errorAlert}/> : null}{warningAlert.length ? <WarningAlert text={warningAlert}/> : null}</div>
+      <div className='alerts-container'>
+        {infoAlert.length ? <InfoAlert text={infoAlert}/> : null}
+        {errorAlert.length ? <ErrorAlert text={errorAlert}/> : null}
+        {warningAlert.length ? <WarningAlert text={warningAlert}/> : null}</div>
       <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} />
       <EventList events={events} />
