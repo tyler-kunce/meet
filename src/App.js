@@ -1,7 +1,7 @@
 import CitySearch from './components/CitySearch';
 import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
-import { InfoAlert, ErrorAlert } from './components/Alert';
+import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
 import { extractLocations, getEvents } from './api';
 import { useEffect, useState } from 'react';
 
@@ -14,8 +14,14 @@ function App() {
   const [currentCity, setCurrentCity] = useState('See all cities');
   const [infoAlert, setInfoAlert] = useState('');
   const [errorAlert, setErrorAlert] = useState('');
+  const [WarningAlert, setWarningAlert] = useState('');
 
   useEffect(() => {
+    if (navigator.onLine) {
+      setWarningAlert('');
+    } else {
+      setWarningAlert('You appear to be Offline. You are seeing cached events.')
+    }
     fetchData();
   }, [currentCity, currentNOE]);
 
