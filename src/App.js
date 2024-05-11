@@ -1,3 +1,5 @@
+import EventGenresChart from './components/EventGenresChart';
+import CityEventsChart from './components/CityEventsChart';
 import CitySearch from './components/CitySearch';
 import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
@@ -43,6 +45,10 @@ function App() {
         {warningAlert.length ? <WarningAlert text={warningAlert}/> : null}</div>
       <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} />
+      <div className='charts-container'>
+        <EventGenresChart events={events} />
+        <CityEventsChart allLocations={allLocations} events={events} />
+      </div>
       <EventList events={events} />
     </div>
   );
